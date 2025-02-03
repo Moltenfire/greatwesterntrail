@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coin Flip Simulation</title>
+    <title>Great Western Trail</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,8 +23,8 @@
 </head>
 <body>
 
-    <h1>Coin Flip Simulation</h1>
-    <button onclick="flipCoins()">Flip Coins</button>
+    <h1>Great Western Trail</h1>
+    <button onclick="newGame()">New Game</button>
     <div id="buildings"></div>
     <div id="neutral_buildings"></div>
     <div id="bonus_cards"></div>
@@ -131,10 +131,8 @@
             return value;
         }
 
-
-        function flipCoins() {
+        function newGame() {
             state = getRandomGameState();
-
             document.getElementById('buildings').innerText = buildingString(state);
             document.getElementById('neutral_buildings').innerText = neutralBuildingString(state);
             document.getElementById('bonus_cards').innerText = bonusCardsString(state);
