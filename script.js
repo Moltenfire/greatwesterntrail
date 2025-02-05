@@ -1,15 +1,12 @@
 
-let rng = new RNG(0);
+let date = new Date();
+let seed = parseInt(date.toISOString().split("T")[0].replaceAll("-", ""))
+let rng = new RNG(seed);
+let newgames = 0;
 const version = 0;
 
 function onload() {
-    let date = new Date();
-    let y = `${date.getFullYear()}`
-    let m = `${date.getMonth()+1}`.padStart(2, "0")
-    let d = `${date.getDay()+1}`.padStart(2, "0")
-    let seed = parseInt(y + m + d)
-    console.log(date)
-    console.log(y, m, d, seed)
+    console.log(`seed ${seed}`)
     rng = new RNG(seed);
     newgame();
 }
@@ -20,6 +17,9 @@ function newgame() {
     document.getElementById('neutral_buildings').innerText = neutralBuildingString(state);
     document.getElementById('bonus_cards').innerText = bonusCardsString(state);
     document.getElementById('state_value').innerText = stateValue(state);
+
+    newgames++;
+    console.log(`Game ${newgames}: ${buildingString(state)} - ${neutralBuildingString(state)} - ${bonusCardsString(state)} - ${stateValue(state)}`);
 }
 
 function getRandomGameState() {
