@@ -60,7 +60,7 @@
                 gamestate.buildings.push(prng() < 0.5 ? 0 : 1);
             }
 
-            let neutral_buildings = ["A", "B", "C", "D", "E", "F", "G"];
+            let neutral_buildings = ["A", "B", "C", "D", "E", "F", "G", "H"];
             for (let i = neutral_buildings.length - 1; i > 0; i--) {
                 let j = Math.floor(prng() * (i + 1));
                 [neutral_buildings[i], neutral_buildings[j]] = [neutral_buildings[j], neutral_buildings[i]];
