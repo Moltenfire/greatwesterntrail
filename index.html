@@ -7,17 +7,24 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>Board Games Randomiser</title>
 </head>
-<body onload="onload()">
+<body>
+    <div id="gwt">
+        <h1>Great Western Trail</h1>
+        <div class="buildings" id="gwt-buildings"></div>
+        <div class="neutral_buildings" id="gwt-neutral"></div>
+        <div class="state_value" id="gwt-state"></div>
+    </div>
+
     <div id="gwt-nz">
         <h1>Great Western Trail: NZ</h1>
-        <div class="buildings"></div>
-        <div class="neutral_buildings"></div>
-        <div class="bonus_cards"></div>
-        <div class="state_value"></div>
+        <div id="gwt-nz-buildings"></div>
+        <div id="gwt-nz-neutral"></div>
+        <div id="gwt-nz-bonus-cards"></div>
+        <div id="gwt-nz-state"></div>
         <button onclick="newgame()">New Game</button>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>
