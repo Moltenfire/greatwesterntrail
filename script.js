@@ -13,10 +13,11 @@ function onload() {
 
 function newgame() {
     state = getRandomGameState();
-    document.getElementById('buildings').innerText = buildingString(state);
-    document.getElementById('neutral_buildings').innerText = neutralBuildingString(state);
-    document.getElementById('bonus_cards').innerText = bonusCardsString(state);
-    document.getElementById('state_value').innerText = stateValue(state);
+    const div = document.getElementById("gwt-nz");
+    div.querySelector('.buildings').innerText = buildingString(state);
+    div.querySelector('.neutral_buildings').innerText = neutralBuildingString(state);
+    div.querySelector('.bonus_cards').innerText = bonusCardsString(state);
+    div.querySelector('.state_value').innerText = stateValue(state);
 
     newgames++;
     console.log(`Game ${newgames}: ${buildingString(state)} - ${neutralBuildingString(state)} - ${bonusCardsString(state)} - ${stateValue(state)}`);

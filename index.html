@@ -4,32 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>Great Western Trail</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        button {
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 24px;
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Board Games Randomiser</title>
 </head>
 <body onload="onload()">
-    <h1>Great Western Trail</h1>
-    <button onclick="newgame()">New Game</button>
-    <div id="buildings"></div>
-    <div id="neutral_buildings"></div>
-    <div id="bonus_cards"></div>
-    <div id="state_value"></div>
+    <div id="gwt-nz">
+        <h1>Great Western Trail: NZ</h1>
+        <div class="buildings"></div>
+        <div class="neutral_buildings"></div>
+        <div class="bonus_cards"></div>
+        <div class="state_value"></div>
+        <button onclick="newgame()">New Game</button>
+    </div>
 
     <script src="script.js"></script>
 
