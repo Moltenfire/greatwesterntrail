@@ -14,14 +14,14 @@ export function newgame() {
 
 function updateGWT() {
     let state = getRandomGameStateGWT();
-    document.getElementById('gwt-buildings').innerText = buildingString(state);
+    document.getElementById('gwt-buildings').innerHTML = buildingHTML(state);
     document.getElementById('gwt-neutral').innerText = neutralBuildingString(state);
     document.getElementById('gwt-state').innerText = state.stateValue();
 }
 
 function updateGWTNZ() {
     let state = getRandomGameStateGWTNZ();
-    document.getElementById('gwt-nz-buildings').innerText = buildingString(state);
+    document.getElementById('gwt-nz-buildings').innerHTML = buildingHTML(state);
     document.getElementById('gwt-nz-neutral').innerText = neutralBuildingString(state);
     document.getElementById('gwt-nz-bonus-cards').innerText = bonusCardsString(state);
     document.getElementById('gwt-nz-state').innerText = state.stateValue();
@@ -119,6 +119,16 @@ function getRandomGameStateGWTNZ() {
     };
 
     return gamestate;
+}
+
+function buildingHTML(state) {
+    let html = '';
+    for (let i = 0; i < state.buildings.length; i++) {
+        let side = state.buildings[i] == 0 ? 'A' : 'B';
+        let colorClass = side === 'A' ? 'red' : 'blue';
+        html += `<span><span class="${colorClass}">${i + 1}${side}</span></span> `;
+    }
+    return html.trim();
 }
 
 function buildingString(state) {

@@ -12,3 +12,5 @@ button {
     cursor: pointer;
 }
 
+.red { color: red; }
+.blue { color: blue; }
